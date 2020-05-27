@@ -1,0 +1,130 @@
+*{
+    margin:0%;
+    padding:0%;
+}
+/* for main.js*/
+.background{
+    background: url("./images/backcovalt.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    height:1000px;
+    background-repeat: no-repeat;
+}
+
+
+/* for head.js */
+.forhead{
+    height:90px;
+    display: flex;
+    color:rgb(238, 238, 238);
+    background:rgba(41, 3, 44, 0.8);
+    animation: revelations 2s ease-out;
+    border-bottom: 1px solid purple;
+}
+@keyframes revelations{
+    0%{
+        background: rgba(41, 3, 44, 0);
+    }
+    50%{
+        background: rgba(41, 3, 44, 0.4);
+    }
+    100%{
+        background: rgba(41,3,44,0.8);
+    }
+}
+.left{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left img{
+    margin-right: 4%;
+}
+.left img:hover{
+    animation: rev 3s linear;
+}
+.left p{
+    font-size: 28px;
+    font-weight: 600;
+}
+.left p:hover{
+    transition-duration: 1s;
+    color:orange;
+    cursor: pointer;
+}
+.right{
+    flex:2;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.right ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width:80%;
+}
+.right ul li{
+    font-size: 20px;
+}
+.right ul li a{
+    text-decoration: none;
+    color:white;
+}
+.right ul li  a:hover{
+    color:orange;
+    border-bottom: 1px solid orange;
+}
+@keyframes rev{
+    0%{
+        transform: translate(0px,0px);
+        
+    }
+    33%{
+        transform: translate(20px,-20px);
+    }
+    66%{
+        transform:translate(0px,0px);
+    }
+    100%{
+        transform: rotateX(-20px,20px);
+    }
+}
+
+.containered {
+    height:200px;
+    background: white;
+}
+
+@media (max-width:800px)
+{
+    .forhead{
+        height:90px;
+        display: flex;
+        color:rgb(238, 238, 238);
+        background:rgba(41, 3, 44, 0.8);
+        animation: revelations 2s ease-out;
+    }
+    .left{
+        flex: 1.7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    .left p{
+        font-size: 20px;
+    }
+    .left img{
+        width:40px;
+        height: 40px;
+    }
+    .right ul li{
+        font-size: 16px;
+    }
+    
+}
