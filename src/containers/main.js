@@ -17,16 +17,14 @@ class Main extends Component {
         var x= new Date();
         this.setState(this.state.time=x.getTime());
         console.log(x.getTime());
+        // missing kaam he abhi filhal ye feature use nhi horha timeshow
+
     }
     render() { 
         return (  
             <div className="background">
                 <Headview />
 
-                <!-- partial error portion -->
-                 <div className="containercontrol">
-                    <Cont onClick={this.timeshow} />
-                </div>
             </div>
         );
     }
