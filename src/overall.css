@@ -11,25 +11,35 @@
     background-repeat: no-repeat;
 }
 
-
 /* for head.js */
 .forhead{
     height:90px;
+    width: 100%;
     display: flex;
+    position: fixed;
+    opacity: 0.8;
     color:rgb(238, 238, 238);
     background:rgba(41, 3, 44, 0.8);
-    animation: revelations 2s ease-out;
-    border-bottom: 1px solid purple;
+    animation: revelations 1.5s ease-in;
+    /*border-bottom: 1px solid purple;*/
+
+
 }
 @keyframes revelations{
     0%{
-        background: rgba(41, 3, 44, 0);
+        transform: translateY(-6em);
+
     }
     50%{
-        background: rgba(41, 3, 44, 0.4);
+         transform: translateY(-4em);
+
+    }
+    80%{
+        transform: translateY(-2em);
     }
     100%{
-        background: rgba(41,3,44,0.8);
+        transform: translateY(0em);
+
     }
 }
 .left{
