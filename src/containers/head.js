@@ -1,22 +1,24 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom'
 import met from "../images/meteor.png";
 
-var Headview = () => {
+class Headview extends Component {
+    render(){
     return(
-        <div className="forhead" >
+        <div className="forhead"  >
             <div className="left">
                 <img src={met} alt="images" width="50px" height="50px"/>
                 <p>Meteorite Tavern</p>
             </div>
             <div className="right">
                 <ul>
-                    <li><a href="">Home</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Links</a></li>
+                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/link">Link</Link></li>
                 </ul>
             </div>
         </div>
     );
 }
-
+}
 export default Headview;
