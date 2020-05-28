@@ -18,11 +18,12 @@ class Main extends Component {
     }
     componentDidMount(){
             /*Fetching Data From Nasa Asteroids API's */
-        const data=[]
+        let data=[];
         fetch('https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY')
         .then(response=>response.json())
         .then(response=>data.push(response))
         console.log(data)
+        return data
 }
     
     timeshow = () => {
