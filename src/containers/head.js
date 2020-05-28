@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import met from "../images/meteor.png";
 
 var Headview = () => {
-
     return(
-        <div className="forhead">
+        <div className="forhead" >
             <div className="left">
                 <img src={met} alt="images" width="50px" height="50px"/>
                 <p>Meteorite Tavern</p>
