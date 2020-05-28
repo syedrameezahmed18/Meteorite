@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 
-var Cont = ({Click}) => {
+var Cont = () => {
 
-        return (
-            <div className="containered">
-                <p>News</p>
-                <p>{Click}</p>
+        return(
+            <div>
+                
             </div>
-          );
+        )
     
 }
  

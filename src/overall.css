@@ -14,9 +14,7 @@
 /* for head.js */
 .forhead{
     height:90px;
-    width: 100%;
     display: flex;
-    position: fixed;
     opacity: 0.8;
     color:rgb(238, 238, 238);
     background:rgba(41, 3, 44, 0.8);
@@ -27,18 +25,18 @@
 }
 @keyframes revelations{
     0%{
-        transform: translateY(-6em);
+        transform: translateY(-100px);
 
     }
     50%{
-         transform: translateY(-4em);
+         transform: translateY(-50px);
 
     }
     80%{
-        transform: translateY(-2em);
+        transform: translateY(-20px);
     }
     100%{
-        transform: translateY(0em);
+        transform: translateY(0px);
 
     }
 }
@@ -105,11 +103,17 @@
     }
 }
 
-.containered {
-    height:200px;
-    background: white;
+/*contains.js*/
+
+.section{
+    margin-top: 2%;
+    height:500px;
+    display: flex;
 }
 
+/*.btn{
+    margin-top: 8%;
+}*/
 @media (max-width:800px)
 {
     .forhead{

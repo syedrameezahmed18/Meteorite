@@ -3,6 +3,7 @@ import Headview from "./head.js";
 import "../overall.css"
 import Cont from "./contains.js";
 import {GET_DATA} from '../Data_APi'
+//import Nav from "./Nav.js";
 class Main extends Component {
     constructor()
     {
@@ -38,7 +39,9 @@ class Main extends Component {
         return (  
             <div className="background">
                 <Headview />
-
+                <div className="section">
+                    <Cont />
+                </div>
             </div>
         );
     }
