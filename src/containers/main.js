@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Headview from "./head.js";
 import "../overall.css"
 import Cont from "./contains.js";
-
+import MainAnimated from './Nav'
 
 class Main extends Component {
     constructor()
@@ -40,7 +40,7 @@ class Main extends Component {
         return (  
             <div className="background">
                 <Headview />
-
+                <MainAnimated/>
             </div>
         );
     }
