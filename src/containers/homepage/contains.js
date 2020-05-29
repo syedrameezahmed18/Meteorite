@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import car1 from "../images/car1.jpg"
-import car2 from "../images/car2.png"
-import car3 from "../images/car3.jpg"
+import car1 from "../../images/car1.jpg"
+import car2 from "../../images/car2.png"
+import car3 from "../../images/car3.jpg"
 import Fade from 'react-reveal/Fade'
 
 

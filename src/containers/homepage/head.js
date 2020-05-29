@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
-import met from "../images/meteor.png";
+import met from "../../images/meteor.png";
 
 class Headview extends Component {
     render(){

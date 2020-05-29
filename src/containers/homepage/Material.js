@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
-import shower from "../images/shower.png"
+import shower from "../../images/shower.png"
 import Fade from 'react-reveal/Fade'
-import "../overall.css"
+import "../../overall.css"
 export default class Material extends Component{
     render(){
     const style={
@@ -20,7 +20,7 @@ export default class Material extends Component{
 
         width: '50%',
         height: '550px',
-        float : 'left'
+        float : 'left',
     }
     const righth={
         textAlign:'center',

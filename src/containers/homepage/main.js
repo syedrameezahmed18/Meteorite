@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Headview from "./head.js";
-import "../overall.css"
+import "../../overall.css"
 import Cont from "./contains.js";
-import MainAnimated from './Nav'
+import MainAnimated from '../Nav'
 import Material from './Material'
 
 class Main extends Component {
