@@ -40,7 +40,7 @@ class Main extends Component {
         return (  
             <div className="background">
                 <Headview />
-                <MainAnimated/>
+                <Cont />
             </div>
         );
     }

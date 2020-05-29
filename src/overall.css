@@ -4,14 +4,22 @@
 }
 /* for main.js*/
 .background{
-    background: url("./images/backcovalt.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    height:1000px;
+    
+    background: black;
+    color:white;
+    height:auto;
     background-repeat: no-repeat;
+    
 }
 
 /* for head.js */
+
+.cover{
+    background: url("./images/cov2.jpg");
+    background-size: cover;
+    height:700px;
+}
+
 .forhead{
     height:90px;
     display: flex;
@@ -20,8 +28,74 @@
     /*background:rgba(41, 3, 44, 0.8);*/
     animation: revelations 1.5s ease-in;
     /*border-bottom: 1px solid purple;*/
+}
+.super{
+    font-size: 56px;
+    font-weight: 400;
+    color:white;
+    margin-top: 15%;
+    text-align: center;
+    animation: lefthero 1s linear
+}
+.mini{
+    font-size: 26px;
+    font-weight: 400;
+    color:white;
+    text-align: center;
+    font-style: italic;
+    animation: righthero 1s linear;
+}
+.hh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hh button{
+    color:white;
+    animation: drp 3s ease-in;
+}
+@keyframes drp {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.6;
+    }
+    100%{
+        opacity: 0.8;
+    }
+}
 
 
+@keyframes lefthero {
+
+    0%{
+        transform: translateX(-400px);
+        opacity: 0.1;
+    }
+    50%{
+        transform: translateX(-200px);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes righthero {
+    0%{
+        transform: translateX(400px);
+        opacity: 0.1;
+    }
+    50%{
+        transform: translateX(200px);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 @keyframes revelations{
     0%{
@@ -104,12 +178,37 @@
 
 /*contains.js*/
 
-.section{
+.sectionport{
     margin-top: 2%;
-    height:500px;
     display: flex;
+    flex-direction: column;
+    height:800px;
+    align-items: center;
+    
+}
+.sectionport p {
+    font-size: 50px;
+    font-weight: 400;
+    
+}
+.carousel{
+    width:100%;
 }
 
+.textfall p:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+.carousel-caption h3{
+    font-size: 60px;
+    margin-bottom: 60px;
+}
+.carousel-caption h3 :hover{
+    cursor:pointer;
+}
+.carousel-caption p i:hover{
+    cursor: pointer;
+}
 /*.btn{
     margin-top: 8%;
 }*/
@@ -158,6 +257,29 @@
         opacity:0.80;
     }
 }
+.check-btn {
+    background-color: orange;
+    box-shadow: 2px 2px 2px black;
+    border-radius: 5px;
+}
+.check-btn:hover{
+    animation: down 1s ease-in;
+   
+}
+@keyframes down{
+    0%{
+        background-color: orange;
+        opacity: 0;
+    }
+    50%{
+        background-color: orange;
+        opacity: 0.6;
+    }
+    100%{
+        background-color: orange;
+        opacity: 0.8;
+    }
+}
 @media (max-width:800px)
 {
     .forhead{
@@ -183,6 +305,15 @@
     }
     .right ul li{
         font-size: 16px;
+    }
+    .super{
+        font-size: 30px;
+    }
+    .mini{
+        font-size: 16px;
+    }
+    .cover{
+        height: 400px;
     }
     
 }
