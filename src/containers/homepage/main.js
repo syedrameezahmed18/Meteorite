@@ -4,6 +4,7 @@ import "../../overall.css"
 import Cont from "./contains.js";
 import MainAnimated from '../Nav'
 import Material from './Material'
+import Footer from './Footer'
 
 class Main extends Component {
     constructor()
@@ -43,6 +44,7 @@ class Main extends Component {
                 <Headview />
                 <Cont />
                 <Material/>
+                <Footer/>
             </div>
         );
     }
