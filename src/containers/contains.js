@@ -22,22 +22,22 @@ var Cont = () => {
     <div class="carousel-item active">
       <img src={car1} class="d-block w-100" alt="..." width="80%" height="600px"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+        <h3>Meteor Tracker</h3>
+        <p><i>Watch the closest meteors revolving around our home planet</i></p>
       </div>
     </div>
     <div class="carousel-item">
       <img src={car2} class="d-block w-100" alt="..." width="80%" height="600px"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Second slide label</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <h3>History</h3>
+        <p><i>See the incidents of the past confirmed by the residents.</i></p>
       </div>
     </div>
     <div class="carousel-item">
       <img src={car3} class="d-block w-100" alt="..." width="80%" height="600px"/>
       <div class="carousel-caption d-none d-md-block">
-        <h5>Third slide label</h5>
-        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+        <h3>Future</h3>
+        <p><i>Cluster data for various ages!</i></p>
       </div>
     </div>
   </div>

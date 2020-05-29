@@ -167,7 +167,7 @@
 /*contains.js*/
 
 .sectionport{
-    margin-top: 15%;
+    margin-top: 12%;
     display: flex;
     flex-direction: column;
     height:800px;
@@ -182,6 +182,16 @@
     width:100%;
 }
 
+.textfall p:hover{
+    transform: scale(1.2);
+    transition-duration: 1s;
+}
+.carousel-caption h3 :hover{
+    cursor:pointer;
+}
+.carousel-caption p i:hover{
+    cursor: pointer;
+}
 /*.btn{
     margin-top: 8%;
 }*/
