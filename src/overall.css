@@ -4,14 +4,22 @@
 }
 /* for main.js*/
 .background{
-    background: url("./images/backcovalt.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    height:1000px;
+    
+    background: black;
+    color:white;
+    height:auto;
     background-repeat: no-repeat;
+    
 }
 
 /* for head.js */
+
+.cover{
+    background: url("./images/cov2.jpg");
+    background-size: cover;
+    height:700px;
+}
+
 .forhead{
     height:90px;
     display: flex;
@@ -20,8 +28,61 @@
     /*background:rgba(41, 3, 44, 0.8);*/
     animation: revelations 1.5s ease-in;
     /*border-bottom: 1px solid purple;*/
+}
+.super{
+    font-size: 56px;
+    font-weight: 400;
+    color:white;
+    margin-top: 15%;
+    text-align: center;
+    animation: lefthero 1s linear
+}
+.mini{
+    font-size: 26px;
+    font-weight: 400;
+    color:white;
+    text-align: center;
+    font-style: italic;
+    animation: righthero 1s linear;
+}
+.hh{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.hh button{
+    color:white;
+}
 
+@keyframes lefthero {
 
+    0%{
+        transform: translateX(-400px);
+        opacity: 0.1;
+    }
+    50%{
+        transform: translateX(-200px);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+@keyframes righthero {
+    0%{
+        transform: translateX(400px);
+        opacity: 0.1;
+    }
+    50%{
+        transform: translateX(200px);
+        opacity: 0.5;
+    }
+    100%{
+        transform: translateX(0px);
+        opacity: 1;
+    }
 }
 @keyframes revelations{
     0%{
@@ -105,10 +166,20 @@
 
 /*contains.js*/
 
-.section{
-    margin-top: 2%;
-    height:500px;
+.sectionport{
+    margin-top: 15%;
     display: flex;
+    flex-direction: column;
+    height:800px;
+    align-items: center;
+    
+}
+.sectionport p {
+    font-size: 40px;
+    
+}
+.carousel{
+    width:100%;
 }
 
 /*.btn{
@@ -139,6 +210,15 @@
     }
     .right ul li{
         font-size: 16px;
+    }
+    .super{
+        font-size: 30px;
+    }
+    .mini{
+        font-size: 16px;
+    }
+    .cover{
+        height: 400px;
     }
     
 }
