@@ -266,6 +266,7 @@
     animation: down 1s ease-in;
    
 }
+
 @keyframes down{
     0%{
         background-color: orange;

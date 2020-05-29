@@ -3,6 +3,7 @@ import Headview from "./head.js";
 import "../overall.css"
 import Cont from "./contains.js";
 import MainAnimated from './Nav'
+import Material from './Material'
 
 class Main extends Component {
     constructor()
@@ -41,6 +42,7 @@ class Main extends Component {
             <div className="background">
                 <Headview />
                 <Cont />
+                <Material/>
             </div>
         );
     }
