@@ -5,19 +5,15 @@ import Cont from "./contains.js";
 import MainAnimated from '../Nav'
 import Material from './Material'
 import Footer from './Footer'
+import history from '../Links/history'
 
 class Main extends Component {
     constructor()
     {
-        
         super()
         this.state = { 
-            time:"",
-            data:[]
+            selected:"",
         }
-       
-
-
     }
    /* componentDidMount(){
         fetch('https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=DEMO_KEY')
@@ -29,14 +25,7 @@ class Main extends Component {
         console.log(this.state.data)
 }*/
     
-    timeshow = () => {
-
-        var x= new Date();
-        this.setState(this.state.time=x.getTime());
-        console.log(x.getTime());
-        // missing kaam he abhi filhal ye feature use nhi horha timeshow
-
-    }
+    
     render() { 
         /*const {data}=this.state */      
         return (  
@@ -44,6 +33,7 @@ class Main extends Component {
                 <Headview />
                 <Cont />
                 <Material/>
+                
                 <Footer/>
             </div>
         );

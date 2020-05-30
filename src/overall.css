@@ -53,7 +53,7 @@
 }
 .hh button{
     color:white;
-    animation: drp 3s ease-in;
+    animation: drp 2s ease-in;
 }
 @keyframes drp {
     0%{
@@ -63,7 +63,7 @@
         opacity: 0.6;
     }
     100%{
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 
@@ -281,6 +281,31 @@
         background-color: orange;
         opacity: 0.8;
     }
+}
+
+/*history.js*/
+
+.historic 
+{
+    height:auto;
+    background: black;
+    color:white;
+}
+.holds1{
+    display: flex;
+    flex-direction: row;
+    height:100px;
+    justify-content: center;
+    align-items: center;
+}
+.holds1 input{
+    width: 500px;
+}
+.bottomhold{
+    display: flex;
+    height:100px;
+    justify-content: center;
+    align-items: center;
 }
 @media (max-width:800px)
 {

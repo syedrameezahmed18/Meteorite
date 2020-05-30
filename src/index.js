@@ -4,10 +4,11 @@ import './index.css';
 import Main from "./containers/homepage/main.js";
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
+import History from "./containers/Links/history";
 
 ReactDOM.render(
   <Router>
-    <Main />
+    <History />
   </Router>,
   document.getElementById('root')
 );
