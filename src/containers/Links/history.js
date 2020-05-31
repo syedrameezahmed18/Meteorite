@@ -20,7 +20,7 @@ class History extends Component {
         
             fetch(`https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=wnesuSSTNIu3l3LzPm3JYsT2rPL0U31CULIRGkT3`)
             .then( resp => resp.json())
-             .then(data => {
+             .then(/*data => {
                  console.log(data);
                 let {links,estimated_diameter,is_potentially_hazardous_asteroid, close_approach_data}=data;
                 close_approach_data.forEach((num,i)=>
@@ -29,13 +29,25 @@ class History extends Component {
                     console.log(close_approach_date);
                    // this.setState({closedata:this.state.closedata.push(close_approach_date),isLoading:false})
                     this.setState(prev => (prev.closedata.push(close_approach_date)))
-                    this.setState({isLoading:false})
                 }
                 )
                 console.log(is_potentially_hazardous_asteroid);
                 
                 this.setState({haz:is_potentially_hazardous_asteroid})
-               }) 
+               }*/
+               
+                 data=>{
+                     console.log(data)
+                     let {links,estimated_diameter,is_potentially_hazardous_asteroid, close_approach_data}=data;
+                     close_approach_data.forEach(ele=> (
+                         this.setState(prev=>(
+                             prev.closedata.push(ele)
+                         ))
+                     ));
+                     this.setState({isLoading:false})
+
+                 }) 
+                     
                  //let closekeys= Object.keys(close_approach_data)
                 
                  /*closekeys.forEach(key2 => 
@@ -74,7 +86,7 @@ class History extends Component {
         
            let {closedata}= this.state
            console.log(closedata);
-           /*let renderkey=Object.keys(closedata)
+           /*let renderkey=Object.keys(closedata)*/
             console.log(closedata);
             if(this.state.isLoading)
             {   return(
@@ -85,9 +97,8 @@ class History extends Component {
                 <p>LOADING....</p>
                 </div>)
             }
-            else*/
+            else
         return(
-<<<<<<< HEAD
              <div className="historic">
                  <Fade top><p>History</p></Fade>
                   <Fade right>
@@ -104,19 +115,6 @@ class History extends Component {
           </div>
           );
         }
-=======
-            <div></div>
-            /*<div class="copies">
-            <Uihandler />
-            
-            {renderkey.map(elem =>
-            {       return(
-                    <HistoryUI danger={this.state.haz} truedata={closedata} /> )
-            })}
-            </div>*/
-        ) 
-    }
->>>>>>> 3f3ad440fd44bbb45206ebcb27ab5f4a5723f4dd
 
 }
 export default History;
