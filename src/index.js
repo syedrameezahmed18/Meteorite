@@ -5,10 +5,13 @@ import Main from "./containers/homepage/main.js";
 import * as serviceWorker from './serviceWorker';
 import {BrowserRouter as Router} from 'react-router-dom'
 import History from "./containers/Links/history";
+import 'semantic-ui-css/semantic.min.css';
+
 
 ReactDOM.render(
   <Router>
-    <History />
+    {/*<History />*/}
+    <Main/>
   </Router>,
   document.getElementById('root')
 );

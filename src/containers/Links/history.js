@@ -46,7 +46,9 @@ apicall = () => {
                  <Fade top><p>History</p></Fade>
                   <Fade right>
                     <div className="holds1">
-                    <input type="text" className="form-control one" placeholder="Starting Date i.e YY-MM-DD"/>
+                    <input type="text" 
+                           className="form-control one"
+                           placeholder="Starting Date i.e YY-MM-DD"/>
                     <input type="text" className="form-control two" placeholder="Ending Date i.e YY-MM-DD"/>
                  </div>
                  <div className="bottomhold">

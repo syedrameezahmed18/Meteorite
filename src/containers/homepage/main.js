@@ -6,6 +6,7 @@ import MainAnimated from '../Nav'
 import Material from './Material'
 import Footer from './Footer'
 import history from '../Links/history'
+import Image from '../Images/MainPage'
 
 class Main extends Component {
     constructor()
@@ -31,9 +32,9 @@ class Main extends Component {
         return (  
             <div className="background">
                 <Headview />
-                <Cont />
-                <Material/>
-                
+               {/* <Cont />
+                <Material/>*/}
+                <Image/>
                 <Footer/>
             </div>
         );
