@@ -11,6 +11,8 @@ import Info from './info'
 import {Route} from 'react-router-dom'
 import Search from '../Images/Search'
 import shower from '../../images/shower.png'
+import car1 from '../../images/car1.jpg'
+
 class Main extends Component {
     constructor()
     {
@@ -42,8 +44,11 @@ class Main extends Component {
                         <Info/>
                     </div>
                     <Cont/>
-                    <Material floatimg={'right'} floattext={'left'} img={shower}/>
-                    
+                    <Material floatimg={'left'} floattext={'right'} img={shower}/>
+                    <Material floatimg={'right'} floattext={'left'} img={car1}/>
+
+                    <Footer/>
+
                 </Fragment>)
                 }}/>
                 <Route path="/imagelibrary" exact render={()=>{
@@ -53,7 +58,6 @@ class Main extends Component {
                     </Fragment>
                     )
                 }}/>
-                <Footer/>
             </div>
         );
     }

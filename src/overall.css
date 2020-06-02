@@ -1,11 +1,12 @@
 *{
     margin:0%;
     padding:0%;
+
 }
 /* for main.js*/
 .background{
     
-    background: black;
+    background-color:black;
     color:white;
     height:auto;
     background-repeat: no-repeat;
@@ -19,6 +20,7 @@
     background-size: cover;
     height:638px;
     opacity: 0.8;
+    
 }
 
 .forhead{
@@ -27,7 +29,7 @@
     opacity: 0.8;
     color:rgb(238, 238, 238);
     /*background:rgba(41, 3, 44, 0.8);*/
-    animation: revelations 1.5s ease-in;
+    /*animation: revelations 1.5s ease-in;*/
     /*border-bottom: 1px solid purple;*/
 }
 .super{
@@ -36,15 +38,14 @@
     color:white;
     margin-top: 15%;
     text-align: center;
-    animation: lefthero 1s linear
+    font-weight: 800;
 }
 .mini{
     font-size: 26px;
-    font-weight: 400;
+    font-weight: 500;
     color:white;
     text-align: center;
-    font-style: italic;
-    animation: righthero 1s linear;
+
 }
 .hh{
     display: flex;
@@ -98,7 +99,7 @@
         opacity: 1;
     }
 }
-@keyframes revelations{
+/*@keyframes revelations{
     0%{
         transform: translateY(-100px);
 
@@ -114,7 +115,7 @@
         transform: translateY(0px);
 
     }
-}
+}*/
 .left{
     flex: 1;
     display: flex;
@@ -159,7 +160,9 @@
     color:white;
 }
 .right ul li  a:hover{
+    transition-duration: 1s;
     color:orange;
+    cursor: pointer;
 }
 @keyframes rev{
     0%{
@@ -365,7 +368,7 @@
         height:90px;
         display: flex;
         color:rgb(238, 238, 238);
-        background:rgba(41, 3, 44, 0.8);
+       /* background:rgba(41, 3, 44, 0.8);*/
         animation: revelations 2s ease-out;
     }
     .left{

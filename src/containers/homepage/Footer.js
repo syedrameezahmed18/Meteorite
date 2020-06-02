@@ -7,12 +7,15 @@ export default class Footer extends Component{
     render(){
         const foot={
             width: '100%',
-            height: '90px'
+            height: '80px',
+            backgroundColor:'black',
+            marginTop:'-150px'
         }
         const p={
             fontSize:'20px',
             textAlign:'center',
-            marginTop:'2%'
+            marginTop:'30px'
+
         }
         const t={
             height:'30px',
@@ -21,7 +24,7 @@ export default class Footer extends Component{
         const repo={
             textAlign:'center',
             color:'white',
-            marginTop:'-1%'
+            marginTop:'-1%',
         }
         return(
             <div className="footer" style={foot}>

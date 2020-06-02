@@ -1,7 +1,7 @@
 import React,{Component} from 'react'
 import Fade from 'react-reveal/Fade'
 import ImCard from './ImCard'
-
+import Footer from '../homepage/Footer'
 
 
 export default class ImageDrawer extends Component{
@@ -90,7 +90,7 @@ export default class ImageDrawer extends Component{
 
                         )
                     }
-
+                    <Footer/>
                 </div>
                 
             </div>

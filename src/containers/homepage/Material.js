@@ -1,4 +1,4 @@
-import React,{Component} from 'react'
+import React,{Component, Fragment} from 'react'
 import shower from "../../images/shower.png"
 import Fade from 'react-reveal/Fade'
 import "../../overall.css"
@@ -16,19 +16,28 @@ export default class Material extends Component{
         border: '0.1px solid white',
         height: '550px',
         width: '100%',
-        marginTop:'-110px',
+        marginTop:'-200px',
         backgroundColor:'white',
+        marginBottom:'200px',
     }
     const right={
         width: '50%',
         height: '550px',
-        float : 'right'
+        float : this.props.floattext,
     }
     const left={
 
         width: '50%',
-        height: '550px',
-        float : 'left',
+        height: '500px',
+        float : this.props.floatimg,
+    }
+    const left2={
+
+        width: '40%',
+        marginRight:'5%',
+        height: '500px',
+        borderRadius:'400px',
+        float : this.props.floatimg,
     }
     const righth={
         textAlign:'center',
@@ -38,11 +47,15 @@ export default class Material extends Component{
         fontWeight:'700'
     }
     const tex={
-        float:'left',
+        float:'right',
          fontSize:'30px',
          color:'black',
-         marginTop:'3%'
+         marginTop:'3%',
+         textAlign:'center'
         }
+    
+        
+        
     const btnstyle={
         border: '1px solid orange',
         backgroundColor:'white',
@@ -61,14 +74,43 @@ export default class Material extends Component{
     return(
         <div className="cont" style={style}>
             <div className="right-align" style={right}>
-                <Fade top><h1 style={righth}><i>Images</i></h1></Fade>
-                <Fade right><p style={tex}>
+                <Fade top><h1 style={righth}><i>
+                    {this.props.floatimg==='right' ?
+                    'Images'
+                    :
+                    'Asteroids Attacks'
+    }
+                    </i></h1></Fade>
+            {this.props.floatimg==='right' ?
+            (<Fragment>
+                <Fade left><p style={tex}>
                    <i>Get The Most Beautiful Images Of Observable Universe From Nasa's Image Library.</i>
                 </p></Fade>
-              <Fade bottom><button className="btnst" style={btnstyle} onClick={handleclick}>Go To Images</button></Fade>
+                </Fragment>)
+                :
+                (
+                    <Fragment>
+                <Fade right><p style={tex}>
+                   <i>Get All The Asteroidal Attacks Data From Nasa's Asteroidal Data Library</i>
+                </p></Fade>
+                </Fragment>
+                )
+    }
+
+              <Fade bottom><button className="btnst" style={btnstyle} onClick={handleclick}>
+              {this.props.floatimg==='right' ?
+
+                  "Go To Images"
+                  :
+                  "Explore"
+}
+                  
+                  </button></Fade>
             </div>
-            
-            <Fade top><img src={shower} style={left}/></Fade>
+            {this.props.floatimg==='left' &&
+            <Fade left><img src={this.props.img} style={left}/></Fade>}
+             {this.props.floatimg==='right' &&
+            <Fade right><img src={this.props.img} style={left2}/></Fade>}
             
         </div>
     )

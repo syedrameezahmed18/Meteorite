@@ -1,6 +1,5 @@
 import React,{Fragment} from 'react'
-
-
+import Fade from 'react-reveal/Fade'
 
 
 export default function Info(){
@@ -13,14 +12,15 @@ export default function Info(){
         fontWeight:'400',
         opacity:'0.8',
         marginTop:'2%',
+        
 
     }
     return(
         <Fragment>
-        <p className="super">Explore what lies beyond your reach!</p>
-        <p className="mini">Latest Meteor tracker!</p>
+        <Fade top><p className="super">Explore what lies beyond your reach!</p></Fade>
+        <Fade bottom><p className="mini">Explore NASA's Asteroid & Image Library</p></Fade>
         <div className="hh">
-        <button className="check-btn" style={style}>Check</button>
+       {/* <button className="check-btn" style={style}>Check</button>*/}
         </div>
         </Fragment>
     )
