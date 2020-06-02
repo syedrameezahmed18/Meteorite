@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import Headview from "./head.js";
 import "../../overall.css"
 import Cont from "./contains.js";
@@ -6,8 +6,11 @@ import MainAnimated from '../Nav'
 import Material from './Material'
 import Footer from './Footer'
 import history from '../Links/history'
-import Image from '../Images/MainPage'
-
+import MainPage from '../Images/ImagePage'
+import Info from './info'
+import {Route} from 'react-router-dom'
+import Search from '../Images/Search'
+import shower from '../../images/shower.png'
 class Main extends Component {
     constructor()
     {
@@ -28,13 +31,28 @@ class Main extends Component {
     
     
     render() { 
-        /*const {data}=this.state */      
         return (  
             <div className="background">
-                <Headview />
-               {/* <Cont />
-                <Material/>*/}
-                <Image/>
+
+                <Route path="/" exact render={()=>{
+                return(
+               <Fragment>
+                    <div className="cover">
+                        <Headview />
+                        <Info/>
+                    </div>
+                    <Cont/>
+                    <Material floatimg={'right'} floattext={'left'} img={shower}/>
+                    
+                </Fragment>)
+                }}/>
+                <Route path="/imagelibrary" exact render={()=>{
+                   return(
+                   <Fragment>
+                        <MainPage/>
+                    </Fragment>
+                    )
+                }}/>
                 <Footer/>
             </div>
         );

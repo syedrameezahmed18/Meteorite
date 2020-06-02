@@ -17,7 +17,8 @@
 .cover{
     background: url("./images/cov2.jpg");
     background-size: cover;
-    height:700px;
+    height:638px;
+    opacity: 0.8;
 }
 
 .forhead{
@@ -179,7 +180,6 @@
 /*contains.js*/
 
 .sectionport{
-    margin-top: 2%;
     display: flex;
     flex-direction: column;
     height:800px;

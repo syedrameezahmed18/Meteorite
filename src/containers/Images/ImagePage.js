@@ -54,8 +54,7 @@ export default class MainPage extends Component{
             width:'60%',
             marginLeft:'20%',
         }
-        console.log(this.state.search,'start')
-        console.log(this.state.data)
+        
         return(
             <Fragment>
                 <div className="cover">

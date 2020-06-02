@@ -2,8 +2,16 @@ import React,{Component} from 'react'
 import shower from "../../images/shower.png"
 import Fade from 'react-reveal/Fade'
 import "../../overall.css"
+import {Redirect} from 'react-router-dom'
 export default class Material extends Component{
+    state={
+        toPage:false
+    }
+   
     render(){
+       const handleclick=()=>{
+            this.setState({toPage:true})
+        }
     const style={
         border: '0.1px solid white',
         height: '550px',
@@ -44,6 +52,12 @@ export default class Material extends Component{
         marginLeft:'35%',
         marginTop:'5%'
     }
+    if(this.state.toPage===true){
+        return(
+            <Redirect to="/imagelibrary"/>
+
+        )
+    }
     return(
         <div className="cont" style={style}>
             <div className="right-align" style={right}>
@@ -51,7 +65,7 @@ export default class Material extends Component{
                 <Fade right><p style={tex}>
                    <i>Get The Most Beautiful Images Of Observable Universe From Nasa's Image Library.</i>
                 </p></Fade>
-              <Fade bottom><button className="btnst" style={btnstyle}>Go To Images</button></Fade>
+              <Fade bottom><button className="btnst" style={btnstyle} onClick={handleclick}>Go To Images</button></Fade>
             </div>
             
             <Fade top><img src={shower} style={left}/></Fade>

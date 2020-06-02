@@ -1,8 +1,6 @@
 import React,{Component} from 'react'
 import Fade from 'react-reveal/Fade'
-import SelectDropDown from './drop'
 import ImCard from './ImCard'
-import { Button, Header, Icon, Image, Modal } from 'semantic-ui-react'
 
 
 
@@ -19,7 +17,7 @@ export default class ImageDrawer extends Component{
         const imagedraw={
             width:'100%',
             height:'100%',
-            marginTop:'50px',
+            marginTop:'0px',
             backgroundColor:'black',
 
         }
@@ -37,13 +35,13 @@ export default class ImageDrawer extends Component{
             ...this.props.data.items
         }
         let val=Object.keys(obj)
-        let info=[]
+        /*let info=[]
         val.map(elem=>{
             obj[elem].data.map(ele=>{
                 info.push(ele)
             })
         })
-        console.log(val)
+        console.log(info)*/
 
         let images=[]
         val.map(elem=>{
@@ -53,10 +51,30 @@ export default class ImageDrawer extends Component{
             })
         )
         })
-        console.log(images)
+        /*console.log(images)*/
+       /* let inf=[]
+        val.map(elee=>{
+          inf.push(info[elee].date_created.slice(0,4))
+
+
+            
+        })
+        console.log(inf)
+        let infi=[]
+        
+                info.map(ele=>{
+                    infi.push({
+                         ...ele,
+                        [ele.date_created.slice(0,4)]:ele})
+                })
+    
+        
+        console.log(infi)
+        inf.sort(function(a,b){return parseInt(String(inf[a]))-parseInt(String(inf[b]))})
+        console.log(inf)*/
         return(
             <div style={style}>
-                <div style={imagedraw}>
+              <div style={imagedraw}>
                      <h1 
                      style={{
                          color:'white',
@@ -67,21 +85,8 @@ export default class ImageDrawer extends Component{
                     }}>{`Found ${val.length} Pictures`}</h1>
                     {
                         images.map(ele=>
-                           <Modal style={inlineStyle} trigger={
-                           <a><ImCard className="imagedis" key={ele} img={ele} /></a>
-                            }>
-                                <Header icon='rocket' content='Image Description' />
-                                <Modal.Content style={{marginTop:'-100px'}}>
-                                <img style={{
-                                    height:'200px',
-                                    width:'200px',
-                                    float:'left',
-                                    marginBottom:'20px'
-                                }}
-                                src={ele}/>
-                                </Modal.Content>
-                                
-                            </Modal>
+                           <a href={ele}><ImCard className="imagedis" key={ele} img={ele} /></a>
+                           
 
                         )
                     }

@@ -33,7 +33,6 @@ class History extends Component {
                 )
                 console.log(is_potentially_hazardous_asteroid);
                 
-                this.setState({haz:is_potentially_hazardous_asteroid})
                }*/
                
                  data=>{
@@ -45,6 +44,7 @@ class History extends Component {
                          ))
                      ));
                      this.setState({isLoading:false})
+                     this.setState({haz:is_potentially_hazardous_asteroid})
 
                  }) 
                      
@@ -87,7 +87,6 @@ class History extends Component {
            let {closedata}= this.state
            console.log(closedata);
            /*let renderkey=Object.keys(closedata)*/
-            console.log(closedata);
             if(this.state.isLoading)
             {   return(
                 <div className="loadingtimes">

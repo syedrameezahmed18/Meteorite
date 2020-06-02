@@ -5,7 +5,6 @@ import Info from './info'
 class Headview extends Component {
     render(){
     return(
-        <div className="cover">
         <div className="forhead"  >
             <div className="left">
                 <img src={met} alt="images" width="50px" height="50px"/>
@@ -13,14 +12,13 @@ class Headview extends Component {
             </div>
             <div className="right">
                 <ul>
-                    <li><Link to="/home">Home</Link></li>
+                    <li><Link to="/">Home</Link></li>
                     <li><Link to="/about">About</Link></li>
                     <li><Link to="/link">Link</Link></li>
                 </ul>
             </div>
         </div>
-        <Info/>
-        </div>
+        
     );
 }
 }
