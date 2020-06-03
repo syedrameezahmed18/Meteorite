@@ -12,8 +12,8 @@ import 'semantic-ui-css/semantic.min.css';
 
 ReactDOM.render(
   <Router>
-    <History />
-    {/*<Main/>*/}
+    {/*<History/>*/}
+    {<Main/>}
   </Router>,
   document.getElementById('root')
 );

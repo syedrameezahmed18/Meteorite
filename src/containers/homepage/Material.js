@@ -5,11 +5,12 @@ import "../../overall.css"
 export default class Material extends Component{
     render(){
     const style={
-        border: '0.1px solid white',
+        border: '0.1px solid black',
         height: '550px',
         width: '100%',
         marginTop:'-110px',
-        backgroundColor:'white',
+        backgroundColor:'black',
+        color:'white'
     }
     const right={
         width: '50%',
@@ -25,14 +26,14 @@ export default class Material extends Component{
     const righth={
         textAlign:'center',
         fontSize:'60px',
-        color:'black',
+        color:'white',
         marginTop:'10%',
         fontWeight:'700'
     }
     const tex={
         float:'left',
          fontSize:'30px',
-         color:'black',
+         color:'white',
          marginTop:'3%'
         }
     const btnstyle={

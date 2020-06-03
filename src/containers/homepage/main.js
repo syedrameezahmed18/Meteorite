@@ -32,8 +32,8 @@ class Main extends Component {
         return (  
             <div className="background">
                 <Headview />
-               {/* <Cont />
-                <Material/>*/}
+               <Cont />
+                <Material/>
                 <Image/>
                 <Footer/>
             </div>
