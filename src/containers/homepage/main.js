@@ -71,6 +71,7 @@ class Main extends Component {
                     <div id='img'>
                     <Material floatimg={'right'} floattext={'left'} img={car1}/>
                     </div>
+                    <Footer/>
 
                 </div>)
                 }}/>
@@ -81,7 +82,6 @@ class Main extends Component {
                     </Fragment>
                     )
                 }}/>
-                <Footer/>
             </div>
         );
     }
