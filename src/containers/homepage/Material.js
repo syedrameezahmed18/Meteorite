@@ -1,61 +1,73 @@
-import React,{Component} from 'react'
+import React,{Component, Fragment} from 'react'
 import shower from "../../images/shower.png"
 import Fade from 'react-reveal/Fade'
 import "../../overall.css"
+import {Redirect} from 'react-router-dom'
 export default class Material extends Component{
-    render(){
-    const style={
-        border: '0.1px solid black',
-        height: '550px',
-        width: '100%',
-        marginTop:'-110px',
-        backgroundColor:'black',
-        color:'white'
+    state={
+        toPage:false
     }
+   
+    render(){
+       const handleclick=()=>{
+            this.setState({toPage:true})
+        }
+    
     const right={
         width: '50%',
         height: '550px',
-        float : 'right'
-    }
-    const left={
+        paddingTop:'10%',
 
+        float : 'right',
+    }
+    const right2={
         width: '50%',
-        height: '550px',
+        height: '100%',
         float : 'left',
     }
-    const righth={
-        textAlign:'center',
-        fontSize:'60px',
-        color:'white',
-        marginTop:'10%',
-        fontWeight:'700'
-    }
-    const tex={
-        float:'left',
-         fontSize:'30px',
-         color:'white',
-         marginTop:'3%'
-        }
-    const btnstyle={
-        border: '1px solid orange',
-        backgroundColor:'white',
+    if(this.state.toPage===true){
+        return(
+            <Redirect to="/imagelibrary"/>
 
-        width: '30%',
-        height: '60px',
-        marginLeft:'35%',
-        marginTop:'5%'
+        )
     }
     return(
-        <div className="cont" style={style}>
-            <div className="right-align" style={right}>
-                <Fade top><h1 style={righth}><i>Images</i></h1></Fade>
-                <Fade right><p style={tex}>
+        <div className="cont">
+            <div className="right-align" style={this.props.floattext==='right' ? right : right2}>
+                <Fade top><h1 className="right-align-h"><i>
+                    {this.props.floatimg==='right' ?
+                    'Images'
+                    :
+                    'Asteroids Attacks'
+    }
+                    </i></h1></Fade>
+            {this.props.floatimg==='right' ?
+            (<Fragment>
+                <Fade left><p className="tex">
                    <i>Get The Most Beautiful Images Of Observable Universe From Nasa's Image Library.</i>
                 </p></Fade>
-              <Fade bottom><button className="btnst" style={btnstyle}>Go To Images</button></Fade>
+                </Fragment>)
+                :
+                (
+                    <Fragment>
+                <Fade right><p className="tex">
+                   <i>Get All The Asteroidal Attacks Data From Nasa's Asteroidal Data Library</i>
+                </p></Fade>
+                </Fragment>
+                )
+    }
+
+              <Fade bottom><button className="btnst" onClick={handleclick}>
+              
+                  Explore
+
+                  
+                  </button></Fade>
             </div>
-            
-            <Fade top><img src={shower} style={left}/></Fade>
+            {this.props.floatimg==='left' &&
+            <Fade left><img src={this.props.img} className="left1"/></Fade>}
+             {this.props.floatimg==='right' &&
+            <Fade right><img src={this.props.img} className="left2"/></Fade>}
             
         </div>
     )

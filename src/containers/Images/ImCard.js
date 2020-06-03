@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { Component } from 'react'
 import Fade from 'react-reveal/Fade'
 
 
-export default function ImCard(){
+export default class ImCard extends Component{
+    
+    render(){
+        
     const style={
-        border:'1px solid white',
-        width:'30%',
+        width:'25%',
         height:'200px',
         backgroundColor:'black',
         display:'inline-block'
     }
     return(
     
-           <Fade bottom><img style={style}/></Fade>
+           <Fade bottom><img alt='Image Not Found In Nasa Library' src={this.props.img} style={style}/></Fade>
     
     )
+}
 }

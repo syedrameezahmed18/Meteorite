@@ -7,11 +7,14 @@ import backcov from '../../images/backcov.jpg'
 
 
 var Cont = () => {
+  const style={
+    opacity:'0.3'
+  }
+  const style1={
+    opacity:'0.2'
+  }
         return(
             <div className="sectionport">
-                <div className="textfall">
-                    <Fade left><p>Wildest Research</p></Fade>
-                </div>
                 <div className="carousel">
             <div id="carouselExampleCaptions" className="carousel slide" data-ride="carousel">
   <ol className="carousel-indicators">
@@ -21,21 +24,21 @@ var Cont = () => {
   </ol>
   <div className="carousel-inner">
     <div className="carousel-item active">
-      <img src={car1} className="d-block w-100" alt="..." width="80%" height="600px"/>
+      <img src={car1} className="d-block w-100" alt="..." width="80%" height="600px" style={style1}/>
       <div className="carousel-caption d-none d-md-block">
         <Fade top><h3>Meteor Tracker</h3></Fade>
         <Fade bottom><p><i>Watch the closest meteors revolving around our home planet</i></p></Fade>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={car2} className="d-block w-100" alt="..." width="80%" height="600px"/>
+      <img src={car2} className="d-block w-100" alt="..." width="80%" height="600px" style={style}/>
       <div className="carousel-caption d-none d-md-block">
         <Fade top><h3>History</h3></Fade>
         <Fade bottom><p><i>See the incidents of the past confirmed by the residents.</i></p></Fade>
       </div>
     </div>
     <div className="carousel-item">
-      <img src={car3} className="d-block w-100" alt="..." width="80%" height="600px"/>
+      <img src={car3} className="d-block w-100" alt="..." width="80%" height="600px" style={style}/>
       <div className="carousel-caption d-none d-md-block">
        <Fade top><h3>Future</h3></Fade>
         <Fade bottom><p><i>Cluster data for various ages and There Close Approaches to Solar System.</i></p></Fade>
