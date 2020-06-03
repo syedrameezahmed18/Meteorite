@@ -7,9 +7,9 @@ export default class Footer extends Component{
     render(){
         const foot={
             width: '100%',
-            height: '80px',
+            height: '65px',
             backgroundColor:'black',
-            marginTop:'-150px'
+            marginTop:'-180px'
         }
         const p={
             fontSize:'20px',

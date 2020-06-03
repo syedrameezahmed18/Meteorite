@@ -12,58 +12,18 @@ export default class Material extends Component{
        const handleclick=()=>{
             this.setState({toPage:true})
         }
-    const style={
-        border: '0.1px solid white',
-        height: '550px',
-        width: '100%',
-        marginTop:'-200px',
-        backgroundColor:'white',
-        marginBottom:'200px',
-    }
+    
     const right={
         width: '50%',
         height: '550px',
-        float : this.props.floattext,
-    }
-    const left={
+        paddingTop:'10%',
 
+        float : 'right',
+    }
+    const right2={
         width: '50%',
-        height: '500px',
-        float : this.props.floatimg,
-    }
-    const left2={
-
-        width: '40%',
-        marginRight:'5%',
-        height: '500px',
-        borderRadius:'400px',
-        float : this.props.floatimg,
-    }
-    const righth={
-        textAlign:'center',
-        fontSize:'60px',
-        color:'black',
-        marginTop:'10%',
-        fontWeight:'700'
-    }
-    const tex={
-        float:'right',
-         fontSize:'30px',
-         color:'black',
-         marginTop:'3%',
-         textAlign:'center'
-        }
-    
-        
-        
-    const btnstyle={
-        border: '1px solid orange',
-        backgroundColor:'white',
-
-        width: '30%',
-        height: '60px',
-        marginLeft:'35%',
-        marginTop:'5%'
+        height: '100%',
+        float : 'left',
     }
     if(this.state.toPage===true){
         return(
@@ -72,9 +32,9 @@ export default class Material extends Component{
         )
     }
     return(
-        <div className="cont" style={style}>
-            <div className="right-align" style={right}>
-                <Fade top><h1 style={righth}><i>
+        <div className="cont">
+            <div className="right-align" style={this.props.floattext==='right' ? right : right2}>
+                <Fade top><h1 className="right-align-h"><i>
                     {this.props.floatimg==='right' ?
                     'Images'
                     :
@@ -83,34 +43,31 @@ export default class Material extends Component{
                     </i></h1></Fade>
             {this.props.floatimg==='right' ?
             (<Fragment>
-                <Fade left><p style={tex}>
+                <Fade left><p className="tex">
                    <i>Get The Most Beautiful Images Of Observable Universe From Nasa's Image Library.</i>
                 </p></Fade>
                 </Fragment>)
                 :
                 (
                     <Fragment>
-                <Fade right><p style={tex}>
+                <Fade right><p className="tex">
                    <i>Get All The Asteroidal Attacks Data From Nasa's Asteroidal Data Library</i>
                 </p></Fade>
                 </Fragment>
                 )
     }
 
-              <Fade bottom><button className="btnst" style={btnstyle} onClick={handleclick}>
-              {this.props.floatimg==='right' ?
+              <Fade bottom><button className="btnst" onClick={handleclick}>
+              
+                  Explore
 
-                  "Go To Images"
-                  :
-                  "Explore"
-}
                   
                   </button></Fade>
             </div>
             {this.props.floatimg==='left' &&
-            <Fade left><img src={this.props.img} style={left}/></Fade>}
+            <Fade left><img src={this.props.img} className="left1"/></Fade>}
              {this.props.floatimg==='right' &&
-            <Fade right><img src={this.props.img} style={left2}/></Fade>}
+            <Fade right><img src={this.props.img} className="left2"/></Fade>}
             
         </div>
     )
