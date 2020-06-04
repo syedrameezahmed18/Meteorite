@@ -68,7 +68,7 @@ export default class MainPage extends Component{
                 
                     <Route path="/imagelibrary" exact render={()=>{
                        return(
-                        <div className="cover">
+                        <div className="coversearch">
                             <Fade top >
                         <div className="forhead">
                             <div className="left">

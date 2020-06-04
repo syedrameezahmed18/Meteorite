@@ -14,6 +14,7 @@
 }
 .packet{
     scroll-behavior: smooth;
+    
 }
 /* for head.js */
 
@@ -32,7 +33,13 @@
     opacity: 0.8;
     background-position-y: -120px;
 }
-
+.coversearch{
+    background: url("./images/string.jpg");
+    background-size: cover;
+    height:638px;
+    opacity: 0.8;
+    background-position-y: -120px;
+}
 .forhead{
     height:90px;
     display: flex;
@@ -340,11 +347,20 @@
 
 .rerender{
     
-    background:url("images/histcov.jpg");
+    background:url("images/aurora.jpg");
     background-attachment: fixed;
     background-size:cover;
+    display: flex;
+    flex-direction: column;
+}
+.rerender p{
+    font-size: 40px;
+    color:whitesmoke;
+    font-weight: 700;
+    margin-top: 5%;
+    text-align: center;
+    font-style: italic;
 
-    
 }
 .ui{
     color:white;

@@ -10,6 +10,8 @@ import Headview from '../homepage/head'
 import Main from '../homepage/main'
 import MainPage from '../Images/ImagePage'
 import nasaapi from '../../Asteriodapi.txt'
+import Footer from '../homepage/Footer'
+import Lightspeed from 'react-reveal/LightSpeed'
 //wnesuSSTNIu3l3LzPm3JYsT2rPL0U31CULIRGkT3  //my recovering api key
 class History extends Component {
 
@@ -67,6 +69,7 @@ class History extends Component {
                         </Fragment>
                        </div>
                        <div className="rerender">
+                           <Lightspeed><p class="tu">ALL DATA</p></Lightspeed>
                             {this.state.datum.map(data => 
                              (<HistoryUI 
                                  truedata={data.close_approach_date} 
@@ -75,6 +78,7 @@ class History extends Component {
                                  miss={Math.floor(data.miss_distance.kilometers)}
                              />))} 
                        </div>
+                            <Footer />
                        </div>
                         )
                    }}/>
