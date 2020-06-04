@@ -1,119 +1,104 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
 import Fade from 'react-reveal/Fade';
 import { render } from 'react-dom';
 import Uihandler from "./uihandler.js"
 import HistoryUI from './historyui';
+import met from "../../images/meteor.png";
+import {BrowserRouter as Router,Link} from 'react-router-dom'
+import {Route} from 'react-router-dom'
+import Headview from '../homepage/head'
+import Main from '../homepage/main'
+import MainPage from '../Images/ImagePage'
+import nasaapi from '../../Asteriodapi.txt'
 //wnesuSSTNIu3l3LzPm3JYsT2rPL0U31CULIRGkT3  //my recovering api key
 class History extends Component {
 
     constructor()
     {
         super()
-        this.state={
-            haz:"",
-            closedata:[],
-            isLoading:true
-            
-        }
-    }
-        componentDidMount(){
         
-            fetch(`https://api.nasa.gov/neo/rest/v1/neo/3542519?api_key=wnesuSSTNIu3l3LzPm3JYsT2rPL0U31CULIRGkT3`)
-            .then( resp => resp.json())
-             .then(/*data => {
-                 console.log(data);
-                let {links,estimated_diameter,is_potentially_hazardous_asteroid, close_approach_data}=data;
-                close_approach_data.forEach((num,i)=>
-                {
-                    let {close_approach_date}=num;
-                    console.log(close_approach_date);
-                   // this.setState({closedata:this.state.closedata.push(close_approach_date),isLoading:false})
-                    this.setState(prev => (prev.closedata.push(close_approach_date)))
-                }
-                )
-                console.log(is_potentially_hazardous_asteroid);
-                
-               }*/
-               
-                 data=>{
-                     console.log(data)
-                     let {links,estimated_diameter,is_potentially_hazardous_asteroid, close_approach_data}=data;
-                     close_approach_data.forEach(ele=> (
-                         this.setState(prev=>(
-                             prev.closedata.push(ele)
-                         ))
-                     ));
-                     this.setState({isLoading:false})
-                     this.setState({haz:is_potentially_hazardous_asteroid})
-
-                 }) 
-                     
-                 //let closekeys= Object.keys(close_approach_data)
-                
-                 /*closekeys.forEach(key2 => 
-                    {   console.log(close_approach_data[key2]);
-                        console.log(close_approach_data[key2]["close_approach_date"])
-                        this.setState({closedata:close_approach_data[key2]["close_approach_date"]})
-                        
-                    //console.log(key2,close_approach_data[key2])
-                    
-                })*/
-                
-            
-        }
-    
-
-
-            /*let x="absolute_magnitude_h";
-            console.log(data);
-            let {links ,element_count, near_earth_objects}=data;
-            const keys = Object.keys(links);
-            keys.forEach((key,i) => console.log(key,links[key]))
-            const key1 = Object.keys(near_earth_objects);
-            key1.forEach((kay,i) =>
-               {console.log(kay,near_earth_objects[kay])
-                Object.keys(near_earth_objects[kay]).forEach((keyinner) => {
-                
-                console.log(keyinner,near_earth_objects[kay][keyinner])
-
-                Object.keys(near_earth_objects[kay][keyinner]).forEach((innest)=> 
-                console.log(innest,near_earth_objects[kay][keyinner][innest]))}
-                )
-            console.log(element_count)}
-            )  */
-
-    render() {
-        
-           let {closedata}= this.state
-           console.log(closedata);
-           /*let renderkey=Object.keys(closedata)*/
-            if(this.state.isLoading)
-            {   return(
-                <div className="loadingtimes">
-                <div class="spinner-border" role="status">
-                <span class="sr-only">Loading...</span>
-                </div>
-                <p>LOADING....</p>
-                </div>)
+            this.state={
+                datum:[],
+                dang:""
             }
-            else
-        return(
-             <div className="historic">
-                 <Fade top><p>History</p></Fade>
-                  <Fade right>
-                    <div className="holds1">
-                    <input type="text" 
-                           className="form-control one"
-                           placeholder="Starting Date i.e YY-MM-DD"/>
-                    <input type="text" className="form-control two" placeholder="Ending Date i.e YY-MM-DD"/>
-                 </div>
-                 <div className="bottomhold">
-                     <button className="btn btn-warning" onClick={this.apicall}>Search</button>
-                 </div>
-              </Fade>
-          </div>
-          );
-        }
+        
+    }
+     
+    componentDidMount()
+    {
+        let nasa=nasaapi
+        fetch(nasa)
+        .then(resp => resp.json())
+            .then(piece => {
+                console.log(piece.close_approach_data)
+                this.setState({datum:piece.close_approach_data})
+                this.setState({dang:piece.is_potentially_hazardous_asteroid})
+            })
+    }
+   render()
+   {
+       
+       return(
+           
+           <div className="background">
+               
+                   <Route path="/history" exact render={()=>{
+                       return(
+                           <div className="thepage">
+                       <div className="coveralt">
+                       <Fade top >
+                        <div className="forhead">
+                            <div className="left">
+                                <img src={met} alt="images" width="50px" height="50px"/>
+                                <p>Meteorite Tavern</p>
+                            </div>
+                            <div className="right">
+                                <ul>
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/history">Asteroidal Data</Link></li>
+                                    <li><Link to="/imagelibrary">Image Library</Link></li>
+                                </ul>
+                            </div>         
+                        </div>
+                        </Fade>
+                        <Fragment>
+                            <Fade top><p className="super" > Astronomical Data</p></Fade>
+                            <Fade bottom><p className="mini">All the recent meteor showers of the past years and upcoming future</p></Fade>
+                        </Fragment>
+                       </div>
+                       <div className="rerender">
+                            {this.state.datum.map(data => 
+                             (<HistoryUI 
+                                 truedata={data.close_approach_date} 
+                                 danger={this.state.dang} 
+                                 des={Math.floor(data.relative_velocity.kilometers_per_second)} 
+                                 miss={Math.floor(data.miss_distance.kilometers)}
+                             />))} 
+                       </div>
+                       </div>
+                        )
+                   }}/>
+                    
+                    <Route path="/" exact render={()=> {
+                       return(
+                            <Fragment>
+                                <Main />
+                            </Fragment>
+                            )
+                    }}/>
+
+                    <Route path="/imagelibrary" exact render={()=> {
+                       return(
+                            <Fragment>
+                                <MainPage />
+                            </Fragment>
+                            )
+                    }}/>
+                
+               
+           </div>
+       )
+   }
 
 }
 export default History;
