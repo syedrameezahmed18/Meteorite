@@ -4,14 +4,11 @@ import ImageDrawer from './MainPage'
 import Headview from '../homepage/head'
 import {FaSearch} from 'react-icons/fa'
 import Fade from 'react-reveal'
-import {BrowserRouter as Router,Route,Link} from 'react-router-dom'
-import History from "../Links/history"
-import met from "../../images/meteor.png";
-import Main from '../homepage/main'
 export default class MainPage extends Component{
     state={
         search:'',
         data:{},
+    
     }
     check(e){
         e.preventDefault()
@@ -27,11 +24,12 @@ export default class MainPage extends Component{
                 
             })
         )
-       
+
         
     }
     
     render(){
+        console.log(this.state.load)
         const style={
             height:'60px',
             marginTop:'240px',
@@ -60,31 +58,11 @@ export default class MainPage extends Component{
         }
         
         return(
-
             <Fragment>
-                
-                {console.log(this.state.data)}
-                <Router>
-                
-                    <Route path="/imagelibrary" exact render={()=>{
-                       return(
-                        <div className="coversearch">
-                            <Fade top >
-                        <div className="forhead">
-                            <div className="left">
-                                <img src={met} alt="images" width="50px" height="50px"/>
-                                <p>Meteorite Tavern</p>
-                            </div>
-                            <div className="right">
-                                <ul>
-                                    <li><Link to="/">Home</Link></li>
-                                    <li><Link to="/history">Asteroidal Data</Link></li>
-                                    <li><Link to="/imagelibrary">Image Library</Link></li>
-                                </ul>
-                            </div>         
-                        </div>
-                        </Fade>
-                        <div class="input-group" style={wid}>
+                <div className="cover">
+                    <Headview/>
+                    
+                 <div class="input-group" style={wid}>
                         <input style={style} type="text" class="form-control" placeholder="Search Pictures" ref={element=>this.input=element} />
                             <div class="input-group-append">
                                 <button style={btn} class="btn btn-secondary" type="button" onClick={e=>this.check(e)}>
@@ -92,25 +70,9 @@ export default class MainPage extends Component{
                                 </button>
                             </div>
                     </div>
-                    </div>
-                    )
-                   }}/>
-                   <Route path="/" exact render={()=> {
-                       return(
-                            <Fragment>
-                                <Main />
-                            </Fragment>
-                            )
-                    }}/>
-                    <Route path="/history" exact render={()=> {
-                       return(
-                            <Fragment>
-                                <History />
-                            </Fragment>
-                            )
-                    }}/>
-                </Router>
-                
+                    
+                    
+                </div>
               {
                 this.state.data.items!==undefined && (
                 <ImageDrawer data={this.state.data}/>

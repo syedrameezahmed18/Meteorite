@@ -14,7 +14,7 @@ class Headview extends Component {
             <div className="right">
                 <ul>
                     <li><Link to="/">Home</Link></li>
-                    <li><Link to="/Asteroidaldata">Asteroidal Data</Link></li>
+                    <li><Link to="/history">Asteroidal Data</Link></li>
                     <li><Link to="/imagelibrary">Image Library</Link></li>
                 </ul>
             </div>
