@@ -1,4 +1,9 @@
+<<<<<<< HEAD
 { "homepage":"https://syedrameezahmed18.github.io/Meteorite",
+=======
+{ 
+  "homepage":"https://syedrameezahmed18.github.io/Meteorite/",
+>>>>>>> c27bb6b5650c609d4675964c0d90aeb99c20f2c9
   "name": "astroworld",
   "version": "0.1.0",
   "private": true,
@@ -12,6 +17,8 @@
     "predeploy":"npm run build",
     "deploy":"gh-pages -d build",
     "start": "react-scripts start",
+    "predeploy": "npm run build",
+    "deploy":"gh-pages -d build",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

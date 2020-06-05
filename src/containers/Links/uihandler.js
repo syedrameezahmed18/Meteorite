@@ -19,7 +19,7 @@ var Uihandler = () =>{
               <div className="titled1">
                 <Fade up><p>Close Approach Data</p></Fade>
                 </div>
-
+                  
               </div>)
               }
 export default Uihandler;              

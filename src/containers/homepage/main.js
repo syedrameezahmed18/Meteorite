@@ -5,7 +5,7 @@ import Cont from "./contains.js";
 import MainAnimated from '../Nav'
 import Material from './Material'
 import Footer from './Footer'
-import history from '../Links/history'
+import History from '../Links/history'
 import MainPage from '../Images/ImagePage'
 import Info from './info'
 import {Route} from 'react-router-dom'
@@ -53,7 +53,7 @@ class Main extends Component {
                                 <div className="right">
                                     <ul>
                                         <li><Link to="/">Home</Link></li>
-                                        <li><a href="#ast">Asteroidal Data</a></li>
+                                        <li><Link to="/history">Asteroidal Data</Link></li>
                                         <li><a href="#img">Image Library</a></li>
                                     </ul>
                                 </div>
@@ -80,6 +80,13 @@ class Main extends Component {
                    <Fragment>
                         <MainPage/>
                     </Fragment>
+                    )
+                }}/>
+                <Route path="/history" exact render={() => {
+                    return(
+                        <Fragment>
+                            <History />
+                        </Fragment>
                     )
                 }}/>
             </div>
