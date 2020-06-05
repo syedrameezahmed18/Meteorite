@@ -8,10 +8,12 @@ export default class MainPage extends Component{
     state={
         search:'',
         data:{},
+        load:false
     
     }
     check(e){
         e.preventDefault()
+        this.setState({load:true})
         const le=this.input.value
         fetch(`https://images-api.nasa.gov/search?q=${le}`)
         .then(response=>response.json())
@@ -24,6 +26,7 @@ export default class MainPage extends Component{
                 
             })
         )
+        this.setState({load:false})
 
         
     }
@@ -44,34 +47,36 @@ export default class MainPage extends Component{
 
         }
         const btn={
-            height:'55px',
+            height:'60px',
             width:'55px',
-            marginTop:'245px',
+            marginTop:'240px',
             backgroundColor:'black',
             border:'0.1px solid black',
             opacity:'0.7'
            
         }
         const wid={
-            width:'60%',
-            marginLeft:'20%',
+            width:'80%',
+            marginLeft:'10%',
         }
         
         return(
             <Fragment>
-                <div className="cover">
+                <div className="coversearch">
                     <Headview/>
                     
-                 <div class="input-group" style={wid}>
-                        <input style={style} type="text" class="form-control" placeholder="Search Pictures" ref={element=>this.input=element} />
-                            <div class="input-group-append">
-                                <button style={btn} class="btn btn-secondary" type="button" onClick={e=>this.check(e)}>
+                 <div className="input-group" style={wid}>
+                        <input style={style} type="text" className="form-control" placeholder="Search Pictures" ref={element=>this.input=element} />
+                            <div className="input-group-append">
+                                <button style={btn} className="btn btn-secondary" type="button" onClick={e=>this.check(e)}>
                                <FaSearch size={25}/>                          
                                 </button>
                             </div>
                     </div>
                     
-                    
+                {this.state.load===true && (
+                    <h1>Loading...</h1>
+                )} 
                 </div>
               {
                 this.state.data.items!==undefined && (
