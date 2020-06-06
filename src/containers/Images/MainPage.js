@@ -14,21 +14,8 @@ export default class ImageDrawer extends Component{
             backgroundColor:'black',
                         
         }
-        const imagedraw={
-            width:'100%',
-            height:'100%',
-            marginTop:'0px',
-            backgroundColor:'black',
-
-        }
-        const inlineStyle = {
-            height: 'auto',
-            top: 'auto',
-            left: 'auto',
-            bottom: 'auto',
-            right: 'auto',
-            
-          }
+        
+        
           
         
         let obj={
@@ -73,19 +60,12 @@ export default class ImageDrawer extends Component{
         inf.sort(function(a,b){return parseInt(String(inf[a]))-parseInt(String(inf[b]))})
         console.log(inf)*/
         return(
-            <div style={style}>
-              <div style={imagedraw}>
-                     <h1 
-                     style={{
-                         color:'white',
-                         fontSize:'40px',
-                         opacity:'0.7',
-                         textAlign:'center'
-                    
-                    }}>{`Found ${val.length} Pictures`}</h1>
+            <div className="style-cover" style={style}>
+              <div className="imagedraw">
+                     <h1>{`Found ${val.length} Pictures`}</h1>
                     {
                         images.map(ele=>
-                           <a href={ele}><ImCard className="imagedis" key={ele} img={ele} /></a>
+                           <a href={ele} key={ele}><ImCard className="imagedis" key={ele} img={ele} /></a>
                            
 
                         )

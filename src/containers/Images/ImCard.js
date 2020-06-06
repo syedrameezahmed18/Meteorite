@@ -6,15 +6,10 @@ export default class ImCard extends Component{
     
     render(){
         
-    const style={
-        width:'25%',
-        height:'200px',
-        backgroundColor:'black',
-        display:'inline-block'
-    }
+    
     return(
     
-           <Fade bottom><img alt='Image Not Found In Nasa Library' src={this.props.img} style={style}/></Fade>
+           <Fade bottom><img alt='Image Not Found In Nasa Library' src={this.props.img} className="card-img"/></Fade>
     
     )
 }

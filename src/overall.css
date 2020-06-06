@@ -196,6 +196,9 @@
     color:orange;
     cursor: pointer;
 }
+.right-btn{
+    display: none;
+}
 @keyframes rev{
     0%{
         transform: translate(0px,0px);
@@ -501,9 +504,55 @@
     margin-left:35%;
     margin-top:5%;
 }
-.mini{
+.input-group {
+    width:'60%';
+    margin-left:'20%';
 }
+#form-control{
+    height:'60px';
+    margin-top:'240px';
+    border-bottom:'5px solid black';
+    border-top:'1px solid transparent';
+    border-right:'1px solid transparent';
+    border-left:'1px solid transparent';
+    font-size:'25px';
+    opacity:'0.7';
+    background-color:'transparent';
+    color:'white';
 
+}
+.input-group-append button{
+    height:'55px';
+    width:'55px';
+    margin-top:'245px';
+    background-color:'black';
+    border:'0.1px solid black';
+    opacity:'0.7';
+}
+.imagedraw{
+    width:'100%';
+    height:'100%';
+    margin-top:'0px';
+    background-color:'black';
+}
+.imagedraw h1{
+    color:white;
+    font-size:40px;
+     opacity:0.7;
+     text-align:center;
+}
+.card-img{
+    width:25%;
+    height:200px;
+    background-color:black;
+    display:inline-block;
+}
+.dropdown-menu{
+    border:1px solid black;
+    width:100%;
+    height:60px;
+    background-color: thistle;
+}
 @media (max-width:1150px){
     .cover{
         background-position-x: 0px;
@@ -533,7 +582,7 @@
         
     }
     .left p{
-        font-size: 20px;
+        font-size: 27px;
     }
     .left img{
         width:40px;
@@ -606,7 +655,9 @@
     .cont{
         height:450px;
     }
-    
+    .card-img{
+        width:33.33%;
+    }
     
 }
 @media (max-width:550px){
@@ -645,6 +696,12 @@
         border-radius: 0px;
         margin-right: 0%;
     }
+    .card-img{
+        height: 150px;
+    }
+    .imagedraw h1{
+        font-size: 30px;
+    }
 }
 @media (max-width:440px){
     .right-align-h{    
@@ -653,6 +710,13 @@
     .left2 {
         width:50%;
 
+    }
+    
+    .left p{
+        font-size: 30px;
+    }
+    .coversearch{
+        background-position-y: 50px;
     }
 }
 @media (max-width:390px){
@@ -693,4 +757,21 @@
         height: 300px;
 
     }
+    
+    .right{
+        flex:0;
+    }
+    .right ul{
+        display: none;
+    }
+   /* .right-btn{
+        display: block;
+        border: 1px solid white;
+        width:50px;
+        height:47%;
+        border-radius: 5px;
+        background-color: transparent;
+        margin-left: 35%;
+    }*/
+    
 }
