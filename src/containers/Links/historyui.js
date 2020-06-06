@@ -5,7 +5,7 @@ var HistoryUI =({danger,truedata,des,miss})=> {
     
     let text=`Hazardous :${danger}`;
     let appdate=`Close Approach Date : ${truedata}`;
-    let vel=`Velocity : ${des}kph`
+    let vel=`Velocity : ${des}kps`
     let lastmiss=`Miss range : ${miss}km`;
         return ( 
             <div className="ui">
