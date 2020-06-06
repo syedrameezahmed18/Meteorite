@@ -3,18 +3,17 @@ import Search from './Search'
 import ImageDrawer from './MainPage'
 import Headview from '../homepage/head'
 import {FaSearch} from 'react-icons/fa'
-import Fade from 'react-reveal'
+import {Link} from 'react-scroll'
 export default class MainPage extends Component{
     state={
         search:'',
         data:{},
-        load:false
     
     }
     check(e){
         e.preventDefault()
-        this.setState({load:true})
         const le=this.input.value
+        console.log("data fetching start")
         fetch(`https://images-api.nasa.gov/search?q=${le}`)
         .then(response=>response.json())
         .then(respon=>
@@ -26,13 +25,14 @@ export default class MainPage extends Component{
                 
             })
         )
-        this.setState({load:false})
+        console.log("data fetching end")
 
+        
+        
         
     }
     
     render(){
-        console.log(this.state.load)
         const style={
             height:'60px',
             marginTop:'240px',
@@ -68,21 +68,20 @@ export default class MainPage extends Component{
                  <div className="input-group" style={wid}>
                         <input style={style} type="text" className="form-control" placeholder="Search Pictures" ref={element=>this.input=element} />
                             <div className="input-group-append">
-                                <button style={btn} className="btn btn-secondary" type="button" onClick={e=>this.check(e)}>
+                               <Link activeClass="active" className="drawer" to="drawerSection" spy={true} smooth={true} duration={500}><button style={btn} className="btn btn-secondary" type="button" onClick={e=>this.check(e)}>
                                <FaSearch size={25}/>                          
-                                </button>
+                                </button></Link>
                             </div>
                     </div>
                     
-                {this.state.load===true && (
-                    <h1>Loading...</h1>
-                )} 
+                
                 </div>
+                <div className="drawerSection">
               {
                 this.state.data.items!==undefined && (
                 <ImageDrawer data={this.state.data}/>
                 )}
-       
+                </div>
             </Fragment>
         )
     }
