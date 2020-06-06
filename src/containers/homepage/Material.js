@@ -27,7 +27,7 @@ export default class Material extends Component{
     }
     if(this.state.toPage===true){
         return(
-            <Redirect to="/imagelibrary"/>
+            <Redirect to={this.props.path}/>
         )
     }
     return(

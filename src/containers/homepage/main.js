@@ -12,10 +12,10 @@ import {Route} from 'react-router-dom'
 import Search from '../Images/Search'
 import shower from '../../images/shower.png'
 import car1 from '../../images/car1.jpg'
-import {Link} from 'react-router-dom'
 import met from "../../images/meteor.png";
 import Fade from 'react-reveal/Fade'
-
+import {Link} from 'react-router-dom'
+import {Link as Scli} from 'react-scroll'
 class Main extends Component {
     constructor()
     {
@@ -53,8 +53,9 @@ class Main extends Component {
                                 <div className="right">
                                     <ul>
                                         <li><Link to="/">Home</Link></li>
-                                        <li><Link to="/history">Asteroidal Data</Link></li>
-                                        <li><a href="#img">Image Library</a></li>
+                                        <li><Scli activeClass="active" className="asteroidal" to="ast" spy={true} smooth={true} duration={500} >Asteroidal Data</Scli></li>
+                                        <li><Scli activeClass="active" className="image" to="img" spy={true} smooth={true} duration={500} >Image Library</Scli></li>
+
                                     </ul>
                                 </div>
                                 
@@ -65,11 +66,11 @@ class Main extends Component {
                     <div className="caro">
                     <Cont/>
                     </div>
-                    <div id='ast'>
-                        <Material floatimg={'left'} floattext={'right'} img={shower}/>
+                    <div className='ast'>
+                        <Material floatimg={'left'} floattext={'right'} img={shower} path={"/history"}/>
                     </div>
-                    <div id='img'>
-                    <Material floatimg={'right'} floattext={'left'} img={car1}/>
+                    <div className='img'>
+                    <Material floatimg={'right'} floattext={'left'} img={car1} path={"/imagelibrary"}/>
                     </div>
                     <Footer/>
 
