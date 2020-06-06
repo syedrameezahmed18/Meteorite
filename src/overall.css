@@ -29,7 +29,7 @@
 .coveralt{
     background: url("./images/histcov.jpg");
     background-size: cover;
-    height:638px;
+    height:680px;
     opacity: 0.8;
     background-position-y: -120px;
 }
@@ -343,6 +343,35 @@
     justify-content: center;
     align-items: center;
 }
+.formed{
+    display: flex;
+    flex-direction: row;
+    height:150px;
+
+    justify-content: center;
+    align-items: center;
+}
+.formed input{
+    width:300px;
+    margin-left:1%;
+    margin-right: 1%;
+    
+}
+.formed input:focus{
+    background:none;
+    color:white;
+}
+.buttony{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: -2%;
+}
+.buttony button{
+    margin-left:1%;
+    margin-right: 1%;
+}
 /*historyui*/
 
 .rerender{
@@ -385,6 +414,25 @@
 .mess p{
     font-size: 22px;
     font-style: italic;
+}
+/* specific ui.js*/
+.anothermess{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height:150px;
+    align-items: center;
+}
+.anothermess p{
+    font-size: 22px;
+    font-style: italic;
+}
+.shifted{
+    margin-bottom:-3.5%;
+}
+.revshifted{
+    margin-top:-5%;
+
 }
 .loadingtimes{
     height:700px;

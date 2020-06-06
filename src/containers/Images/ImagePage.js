@@ -59,7 +59,7 @@ export default class MainPage extends Component{
         
         return(
             <Fragment>
-                <div className="cover">
+                <div className="coversearch">
                     <Headview/>
                     
                  <div class="input-group" style={wid}>
