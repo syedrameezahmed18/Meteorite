@@ -136,7 +136,7 @@ class History extends Component {
                                             hazard={fresh.is_potentially_hazardous_asteroid}
                                             name={fresh.name}
                                             />
-                                            //have work to do here //data iteration issues
+                                            
                                         ))}
                                         {this.state.newspec.map((halt,i) =>
                                         (
