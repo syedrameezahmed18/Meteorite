@@ -10,7 +10,7 @@ let Specific = ({date,diameter,hazard,name}) => {
         <div className="anothermess">
            
             <Fade left><p className="shifted">{dtxt}</p></Fade>
-            <Fade left><p>{ditxt}</p></Fade>
+            <Fade left><p className="forgotten">{ditxt}</p></Fade>
             <Fade left><p>{htxt}</p></Fade>
             <Fade left><p className="revshifted">{ntxt}</p></Fade>
 

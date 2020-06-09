@@ -619,6 +619,7 @@
     
 }
 @media (max-width:600px){
+    
     .super{
         font-size: 30px;
         margin-top: 200px;
@@ -630,11 +631,7 @@
     .right ul{
         width: 60%;
     }
-    .cover{
-        background-position-x: -150px;
-        background-position-y: 0px;
-        height: 650px;
-    }
+    
     
     .carousel-item{
         height:500px;
@@ -657,6 +654,46 @@
     }
     .card-img{
         width:33.33%;
+    }
+    
+    .mess,.anothermess{
+        display: flex;
+        flex-direction: column;
+        height:300px;
+        justify-content: space-around;
+        margin-bottom: 5%;
+        border-bottom: 2px solid green;
+    }
+    .mess p,.anothermess p{
+        font-size: 20px;
+
+    }
+    .forgotten{
+        margin-top:30%;
+    }
+    .super{
+       margin-top:10%;
+    }
+    .formed{
+        display: flex;
+        flex-direction: column;
+        height:125px;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .formed input{
+        width:150px;
+    }
+    .buttony{
+        display: flex;
+        flex-direction: row;
+        height:125px;
+        justify-content: center;
+        
+        align-items: center;   
+    }
+    .rerender{
+        margin-top:-60%;
     }
     
 }
@@ -704,6 +741,12 @@
     }
 }
 @media (max-width:440px){
+    .cover{
+        background: url("./images/cov2.jpg");
+    background-size: cover;
+    opacity: 0.8;
+        height:400px;
+    }
     .right-align-h{    
         font-size: 24px;
     }
